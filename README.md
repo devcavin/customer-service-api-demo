@@ -1,5 +1,5 @@
-# django-fastapi-boilerplate
-Repository for quickly jumpstarting web projects that uses both Django &amp; FastAPI frameworks for backend.
+# customer-service-api-demo
+Repository showing a simple notes API using Django and FastAPI for a workshop I did teaching my folks the basics of API. This repository is designed to provide a boilerplate for building basic notes CRUD endpoints with ADD, READ, UPDATE, and DELETE functionalities.
 
 
 # Backend Directory Structure
@@ -58,39 +58,8 @@ backend
 │   │       ├── logo.png
 │   │       └── user.png
 │   └── static
-├── finance
-│   ├── admin.py
-│   ├── apps.py
-│   ├── forms.py
-│   ├── __init__.py
-│   ├── models.py
-│   ├── templatetags
-│   │   └── my_filters.py
-│   ├── tests.py
-│   └── views.py
 ├── Makefile
-├── management
-│   ├── admin.py
-│   ├── apps.py
-│   ├── forms.py
-│   ├── __init__.py
-│   ├── models.py
-│   ├── tests.py
-│   └── views.py
 ├── manage.py
-├── project
-│   ├── asgi.py
-│   ├── __init__.py
-│   ├── settings
-│   │   ├── base.py
-│   │   ├── config.py
-│   │   ├── dev.py
-│   │   ├── __init__.py
-│   │   └── prod.py
-│   ├── urls.py
-│   ├── utils
-│   │   ├── admin.py
-│   │   └── __init__.py
 │   └── wsgi.py
 ├── requirements.txt
 ├── templates
@@ -122,65 +91,61 @@ Typical frontend directory structure using React might look like:
 
 ```
 frontend
-├── dist.ready
-│   ├── assets
-│   │   ├── index-8zeza7Vl.css
-│   │   └── index-DrVtJ0P4.js
-│   └── index.html
-├── eslint.config.js
 ├── index.html
-├── package.json
-├── package-lock.json
-├── postcss.config.js
-├── src
-│   ├── api
-│   │   ├── auth.ts
-│   │   ├── client.ts
-│   │   ├── routes
-│   │   │   ├── account.ts
-│   │   │   ├── business.ts
-│   │   │   └── core.ts
-│   │   └── types
-│   │       ├── account.ts
-│   │       ├── auth.ts
-│   │       ├── business.ts
-│   │       └── core.ts
-│   ├── App.tsx
-│   ├── components
-│   │   ├── auth
-│   │   │   ├── LoginForm.tsx
-│   │   │   ├── PasswordInput.tsx
-│   │   │   ├── RegisterForm.tsx
-│   │   │   └── ResetPasswordForm.tsx
-│   │   ├── BookCard.tsx
-│   │   ├── BookSearch.tsx
-│   │   ├── ContactForm.tsx
-│   │   ├── dashboard
-│   │   │   ├── BookSuggestions.tsx
-│   │   │   ├── BorrowedBooks.tsx
-│   │   │   ├── Concerns.tsx
-│   │   │   ├── Feedback.tsx
-│   │   │   ├── Layout.tsx
-│   │   │   └── Messages.tsx
-│   │   ├── FAQSection.tsx
-│   │   ├── FeedbackCard.tsx
-│   │   ├── Modal.tsx
-│   │   └── Navbar.tsx
-│   ├── index.css
-│   ├── main.tsx
-│   ├── pages
-│   │   ├── AuthPage.tsx
-│   │   ├── DashboardPage.tsx
-│   │   └── HomePage.tsx
-│   ├── utils
-│   │   ├── auth.ts
-│   │   └── format.ts
-│   └── vite-env.d.ts
-├── tailwind.config.js
-├── tsconfig.app.json
-├── tsconfig.json
-├── tsconfig.node.json
-└── vite.config.ts
-
-12 directories, 48 files
+├── css
+│   ├── main.css
+├── pages
+│   │   ├── main.js
+├── img
+│   ├── logo.png
 ```
+
+
+# Installation
+1. Clone the repository:
+   ```bash
+   git clone git@github.com:Killercavin/customer-service-api-demo.git
+    cd customer-service-api-demo
+    ```
+2. Create a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
+3. Install the dependencies:
+   ```bash
+    pip install -r requirements.txt
+    ```
+4. Set up the environment variables:
+   Create a `.env` file in the root directory and add the following variables:
+   ```env
+   SECRET_KEY=your_secret_key
+   DEBUG=True
+   ALLOWED_HOSTS=localhost,
+
+5. Create a superuser account:
+   ```bash
+   python manage.py createsuperuser
+   ```
+6. Run the migrations:
+   ```bash
+    python manage.py makemigrations
+    python manage.py migrate
+    ```
+
+7. Start the development server:
+   ```bash
+   python manage.py runserver 
+   python -m python -m fastapi run api 
+   ```
+
+Open your browser and navigate to `http://localhost:8000` for FastAPI.
+Docsumentation for the API will be available at `http://localhost:8000/docs` and the admin interface at `http://localhost:8000/d/admin`.
+
+
+# API Documentation
+You can access the API documentation for FastAPI at `http://localhost:8001/docs`. This will provide you with an interactive interface to test the API endpoints.
+
+
+
+Note: This repository is a boilerplate and does not include any frontend code. You can use any frontend framework of your choice, such as React, Vue.js, or Angular, and integrate it with the backend APIs provided in this repository. It was forked from [https://github.com/Simatwa/django-fastapi-boilerplate](https://github.com/Simatwa/django-fastapi-boilerplate) and modified to suit my needs. Thanks to the original author for creating this boilerplate.
