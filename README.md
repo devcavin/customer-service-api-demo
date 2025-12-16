@@ -104,7 +104,7 @@ frontend
 # Installation
 1. Clone the repository:
    ```bash
-   git clone git@github.com:Killercavin/customer-service-api-demo.git
+   git clone https://github.com/devcavin/customer-service-api-demo.git
     cd customer-service-api-demo
     ```
 2. Create a virtual environment:
@@ -145,6 +145,7 @@ Docsumentation for the API will be available at `http://localhost:8000/docs` and
 
 # API Documentation
 You can access the API documentation for FastAPI at `http://localhost:8001/docs`. This will provide you with an interactive interface to test the API endpoints.
+
 
 
 
